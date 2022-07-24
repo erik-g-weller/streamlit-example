@@ -62,22 +62,22 @@ num = st.text_input('Enter quantity being purchased')
     # print('Enter quantity')
     # num = float(input())
     #
-    if unit_type == 1:
-        if vol_type == 1:
-            price = unit_price * num
-            quantity = num * 117.348
-        elif vol_type == 2:
-            price = unit_price * (num / 117.348)
-            quantity = num
+if unit_type == 1:
+    if vol_type == 1:
+        price = unit_price * num
+        quantity = num * 117.348
+    elif vol_type == 2:
+        price = unit_price * (num / 117.348)
+        quantity = num
 
-    elif unit_type == 2:
-        if vol_type == 1:
-            price = unit_price * 117.348 * num
-            quantity = num * 117.348
-        elif vol_type == 2:
-            price = unit_price * num
-    else:
-        pass
+elif unit_type == 2:
+    if vol_type == 1:
+        price = unit_price * 117.348 * num
+        quantity = num * 117.348
+    elif vol_type == 2:
+        price = unit_price * num
+else:
+    pass
 
     # stronger_abv = .19
     # weaker_abv = 0
