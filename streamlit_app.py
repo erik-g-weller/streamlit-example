@@ -3,11 +3,14 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+from forex_python.converter import CurrencyRates
+from sigfig import round
+
 
 """
-# Welcome to Streamlit!
+# SUNiCE Brew Converter
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+
 
 If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
 forums](https://discuss.streamlit.io).
