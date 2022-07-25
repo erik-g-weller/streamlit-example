@@ -134,17 +134,17 @@ else:
 st.text('\n\n')
 st.markdown("""---""")
 
-st.text(f'Stronger liquid represents {round(quantity/percent_total_volume * 100, sigfigs = 4)}% of total volume \n')
-st.text((f'Weaker liquid {round(((percent_total_volume - weaker_total_volume)/percent_total_volume * 100), sigfigs = 4)}% of total volume\n')
-st.text(f'You will need to add {round(weaker_total_volume, sigfigs=4)} liters of water to the {quantity} liters of brew.\n')
-st.text(f'Total volume is {percent_total_volume} liters| {round(total_oz, sigfigs=4)} fluid ounces\n')
-st.text(f'The batch will produce a total of {round(cases, sigfigs=6)} cases\n')
+st.write(f'Stronger liquid represents {round(quantity/percent_total_volume * 100, sigfigs = 4)}% of total volume \n')
+st.write(f'Weaker liquid {round(((percent_total_volume - weaker_total_volume)/percent_total_volume * 100), sigfigs = 4)}% of total volume\n')
+st.write(f'You will need to add {round(weaker_total_volume, sigfigs=4)} liters of water to the {quantity} liters of brew.\n')
+st.write(f'Total volume is {percent_total_volume} liters| {round(total_oz, sigfigs=4)} fluid ounces\n')
+st.write(f'The batch will produce a total of {round(cases, sigfigs=6)} cases\n')
 if curr != 1:
-    st.text(
+    st.write(
         f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
         ' an assumed transaction fee of 1%.')
 else:
-    st.text(f'The total cost for this order is ${price}')
+    st.write(f'The total cost for this order is ${price}')
 
 
     # print('\n\n\n')
@@ -155,9 +155,9 @@ else:
     # print(f'Total volume is {percent_total_volume} liters| {round(total_oz, sigfigs=4)} fluid ounces\n')
     # print(f'The batch will produce a total of {round(cases, sigfigs=6)} cases\n')
     if curr != 1:
-        print(
+        st.write(
             f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
             ' an assumed transaction fee of 1%.')
     else:
-        print(f'The total cost for this order is ${price}')
+        st.write(f'The total cost for this order is ${price}')
 
