@@ -70,23 +70,26 @@ except ValueError:
     # print('Enter quantity')
     # num = float(input())
     #
-if unit_type == 'Barrels':
-    if vol_type == 'Barrels':
-        price = unit_price * num
-        quantity = num * 117.348
-    elif vol_type == 'Liters':
-        price = unit_price * num / 117.348
-        quantity = num
+try:
+    if unit_type == 'Barrels':
+        if vol_type == 'Barrels':
+            price = unit_price * num
+            quantity = num * 117.348
+        elif vol_type == 'Liters':
+            price = unit_price * num / 117.348
+            quantity = num
 
-elif unit_type == 'Liters':
-    if vol_type == 'Barrels':
-        price = unit_price * num * 117.348
-        quantity = num * 117.348
-    elif vol_type == 'Liters':
-        price = unit_price * num
-        quantity = num
-else:
-    pass
+    elif unit_type == 'Liters':
+        if vol_type == 'Barrels':
+            price = unit_price * num * 117.348
+            quantity = num * 117.348
+        elif vol_type == 'Liters':
+            price = unit_price * num
+            quantity = num
+    else:
+        pass
+except:
+    print('')
 
 
 weaker_abv = 0
