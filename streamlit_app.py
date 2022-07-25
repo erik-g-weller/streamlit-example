@@ -74,7 +74,7 @@ if unit_type == 'Barrels':
 
 elif unit_type == 'Liters':
     if vol_type == 'Barrels':
-        price = unit_price * num / 117.348
+        price = unit_price * num * 117.348
         quantity = num * 117.348
     elif vol_type == 'Liters':
         price = unit_price * num / 117.348
