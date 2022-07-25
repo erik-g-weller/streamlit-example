@@ -20,8 +20,11 @@ unit_type = st.selectbox('Choose units product price is quoted in:', ['Barrels',
 st.text('\n\n')
 vol_type = st.selectbox('Choose units quantity being purchased is quoted in:',['Barrels','Liters'])
 st.text('\n\n')
+try:
+    unit_price = st.text_input('Enter quoted price per unit')
+except ValueError:
+    print('Enter quoted price per unit')
 unit_price = st.text_input('Enter quoted price per unit')
-unit_price = float(unit_price)
 st.text('\n\n')
 num = float(st.text_input('Enter quantity being purchased'))
 
