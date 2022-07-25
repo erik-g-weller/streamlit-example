@@ -25,7 +25,10 @@ try:
 except ValueError:
     print('Enter quoted price per unit')
 st.text('\n\n')
-num = float(st.text_input('Enter quantity being purchased'))
+try:
+    num = float(st.text_input('Enter quantity being purchased'))
+    except ValueError:
+    print('Enter quantity being purchased')
 
 
 
@@ -103,12 +106,20 @@ weaker_abv = 0
 # else:
 #     unit = 'Liters'
 
+try:
+    stronger_abv = float(st.text_input('Enter brew ABV'))
 
-stronger_abv = float(st.text_input('Enter brew ABV'))
+except ValueError:
+    print('Enter brew ABV')
+
 
 weaker_abv = 0
 
-required_abv_abv = float(st.text_input('Enter target ABV'))
+try:
+    required_abv_abv = float(st.text_input('Enter target ABV'))
+except ValueError:
+    print('Enter target ABV')
+
 
 
 weaker_req = stronger_abv - required_abv_abv
