@@ -87,19 +87,19 @@ weaker_abv = 0
 required_abv_abv = .05
 quantity = 117.348
 
-if unit == 'Barrels':
-    quantity = quantity * 117.348
-elif unit == 'Liters':
-    quantity = quantity * 3.78541
-else:
-    pass
-
-if unit == 'Barrels':
-    unit = 'Beer Barrels'
-elif unit == 'Liters':
-    unit = 'Gallons'
-else:
-    unit = 'Liters'
+# if vol_type == 'Barrels':
+#     quantity = quantity * 117.348
+# elif vol_type == 'Liters':
+#     quantity = quantity * 3.78541
+# else:
+#     pass
+#
+# if uni == 'Barrels':
+#     unit = 'Beer Barrels'
+# elif unit == 'Liters':
+#     unit = 'Gallons'
+# else:
+#     unit = 'Liters'
 
 
 stronger_abv = st.number_input('Enter brew ABV')
