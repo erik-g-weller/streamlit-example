@@ -24,7 +24,6 @@ try:
     unit_price = st.text_input('Enter quoted price per unit')
 except ValueError:
     print('Enter quoted price per unit')
-unit_price = st.text_input('Enter quoted price per unit')
 st.text('\n\n')
 num = float(st.text_input('Enter quantity being purchased'))
 
