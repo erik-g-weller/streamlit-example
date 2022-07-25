@@ -74,10 +74,10 @@ if unit_type == 'Barrels':
 
 elif unit_type == 'Liters':
     if vol_type == 'Barrels':
-        price = unit_price * num
+        price = unit_price * num / 117.348
         quantity = num * 117.348
     elif vol_type == 'Liters':
-        price = unit_price * num
+        price = unit_price * num / 117.348
         quantity = num
 else:
     pass
@@ -119,17 +119,17 @@ total_oz = percent_total_volume * 33.814
 cases = total_oz / 240
 
 if curr == 'USD':
-    price = round(unit_price * quantity, sigfigs = 8)
+    price = round(price, sigfigs = 8)
     curr_unit = 'USD'
 elif curr == 'EUR':
     c = CurrencyRates()
     rate = float(c.get_rate('EUR', 'USD'))
-    price = round(unit_price * rate * quantity * 1.01, sigfigs=8)
+    price = round(price * rate * 1.01, sigfigs=8)
     curr_unit = 'EUR'
 elif curr == 'GBP':
     c = CurrencyRates()
     rate = float(c.get_rate('GBP', 'USD'))
-    price = round(unit_price * quantity * rate * 1.01, sigfigs=8)
+    price = round(price * rate * 1.01, sigfigs=8)
     curr_unit = 'GBP'
 
 st.text('\n\n')
