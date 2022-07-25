@@ -139,9 +139,8 @@ st.markdown("""---""")
 st.write(f'You will need to add {round(weaker_total_volume, sigfigs=4)} liters of water to the {quantity} liters of brew.\n')
 st.write(f'Total volume is {percent_total_volume} liters| {round(total_oz, sigfigs=4)} fluid ounces\n')
 st.write(f'The batch will produce a total of {round(cases, sigfigs=6)} cases\n')
-if curr != 1:
-    st.write(
-        f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
+if curr != 'USD':
+    st.write(f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
         ' an assumed transaction fee of 1%.')
 else:
     st.write(f'The total cost for this order is ${price}')
