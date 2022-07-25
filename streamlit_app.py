@@ -64,20 +64,21 @@ num = float(st.text_input('Enter quantity being purchased'))
     # print('Enter quantity')
     # num = float(input())
     #
-if unit_type == 1:
-    if vol_type == 1:
+if unit_type == 'Barrels':
+    if vol_type == 'Barrels':
         price = unit_price * num
         quantity = num * 117.348
-    elif vol_type == 2:
+    elif vol_type == 'Liters':
         price = unit_price * (num / 117.348)
         quantity = num
 
-elif unit_type == 2:
-    if vol_type == 1:
-        price = unit_price * 117.348 * num
-        quantity = num * 117.348
-    elif vol_type == 2:
+elif unit_type == 'Liters':
+    if vol_type == 'Barrels':
         price = unit_price * num
+        quantity = num * 117.348
+    elif vol_type == 'Liters':
+        price = unit_price * num
+        quantity = num
 else:
     pass
 
