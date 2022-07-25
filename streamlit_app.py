@@ -119,7 +119,7 @@ total_oz = percent_total_volume * 33.814
 cases = total_oz / 240
 
 if curr == 'USD':
-    # price = round(unit_price * num, sigfigs = 8)
+    price = round(unit_price * num, sigfigs = 8)
     curr_unit = 'USD'
 elif curr == 'EUR':
     c = CurrencyRates()
