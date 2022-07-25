@@ -27,7 +27,7 @@ except ValueError:
 st.text('\n\n')
 try:
     num = float(st.text_input('Enter quantity being purchased'))
-    except ValueError:
+except ValueError:
     print('Enter quantity being purchased')
 
 
