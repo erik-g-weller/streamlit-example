@@ -129,7 +129,7 @@ elif curr == 'EUR':
 elif curr == 'GBP':
     c = CurrencyRates()
     rate = float(c.get_rate('GBP', 'USD'))
-    price = round(unit_price * rate * 1.01, sigfigs=8)
+    price = round(unit_price * num * rate * 1.01, sigfigs=8)
     curr_unit = 'GBP'
 
 st.text('\n\n')
@@ -145,12 +145,4 @@ if curr != 'USD':
 else:
     st.write(f'The total cost for this order is ${price}')
 
-
-
-if curr != 1:
-    st.write(
-        f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
-        ' an assumed transaction fee of 1%.')
-else:
-    st.write(f'The total cost for this order is ${price}')
 
