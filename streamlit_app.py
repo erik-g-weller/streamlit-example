@@ -119,23 +119,23 @@ total_oz = percent_total_volume * 33.814
 cases = total_oz / 240
 
 if curr == 'USD':
-    price = round(unit_price * num, sigfigs = 8)
+    price = round(unit_price * quantity, sigfigs = 8)
     curr_unit = 'USD'
 elif curr == 'EUR':
     c = CurrencyRates()
     rate = float(c.get_rate('EUR', 'USD'))
-    price = round(unit_price * rate * num * 1.01, sigfigs=8)
+    price = round(unit_price * rate * quantity * 1.01, sigfigs=8)
     curr_unit = 'EUR'
 elif curr == 'GBP':
     c = CurrencyRates()
     rate = float(c.get_rate('GBP', 'USD'))
-    price = round(unit_price * num * rate * 1.01, sigfigs=8)
+    price = round(unit_price * quantity * rate * 1.01, sigfigs=8)
     curr_unit = 'GBP'
 
 st.text('\n\n')
 st.markdown("""---""")
 
-st.write(num)
+st.write(quantity)
 st.write(unit_price)
 st.write(f'You will need to add {round(weaker_total_volume, sigfigs=4)} liters of water to the {quantity} liters of brew.\n')
 st.write(f'Total volume is {percent_total_volume} liters| {round(total_oz, sigfigs=4)} fluid ounces\n')
