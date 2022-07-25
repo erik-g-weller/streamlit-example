@@ -22,10 +22,9 @@ vol_type = st.selectbox('Choose units quantity being purchased is quoted in:',['
 st.text('\n\n')
 unit_price = float(st.text_input('Enter quoted price per unit'))
 st.text('\n\n')
-num = st.number_input('Enter quantity being purchased')
+num = float(st.text_input('Enter quantity being purchased'))
 
 
-st.write(num)
 
 # with st.echo(code_location='below'):
 #     #total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
