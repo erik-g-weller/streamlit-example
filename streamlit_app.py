@@ -24,6 +24,7 @@ unit_price = st.number_input('Enter quoted price per unit')
 st.text('\n\n')
 num = st.number_input('Enter quantity being purchased')
 
+
 st.write(num)
 
 # with st.echo(code_location='below'):
@@ -64,96 +65,94 @@ st.write(num)
     # print('Enter quantity')
     # num = float(input())
     #
-# if unit_type == 1:
-#     if vol_type == 1:
-#         price = unit_price * num
-#         quantity = num * 117.348
-#     elif vol_type == 2:
-#         price = unit_price * (num / 117.348)
-#         quantity = num
-#
-# elif unit_type == 2:
-#     if vol_type == 1:
-#         price = unit_price * 117.348 * num
-#         quantity = num * 117.348
-#     elif vol_type == 2:
-#         price = unit_price * num
-# else:
-#     pass
-#
-#     # stronger_abv = .19
-#     # weaker_abv = 0
-#     # required_abv_abv = .05
-#     # quantity = 117.348
-#
-#     # if unit == 1:
-#     #     quantity = quantity * 117.348
-#     # elif unit == 2:
-#     #     quantity = quantity * 3.78541
-#     # else:
-#     #     pass
-#
-#     # if unit == 1:
-#     #     unit = 'Beer Barrels'
-#     # elif unit == 2:
-#     #     unit = 'Gallons'
-#     # else:
-#     #     unit = 'Liters'
-#
-#     print('Enter the brew ABV')
-#     stronger_abv = float(input())
-#
-#     # print('Enter weaker ABV. (Enter 0 for water)')
-#     weaker_abv = 0
-#
-#     print('Enter target ABV')
-#     required_abv_abv = float(input())
-#
-#     weaker_req = stronger_abv - required_abv_abv
-#     stronger_req = required_abv_abv - weaker_abv
-#
-#     required_stronger = round((stronger_req / (stronger_req + weaker_req)), sigfigs=4)
-#     required_weaker = round((weaker_req / (stronger_req + weaker_req)), sigfigs=4)
-#     percent_total_volume = round(quantity / required_stronger, sigfigs=3)
-#     weaker_total_volume = percent_total_volume * required_weaker
-#     total_oz = percent_total_volume * 33.814
-#     cases = total_oz / 240
-#
-#     if curr == 1:
-#         # price = round(unit_price * num, sigfigs = 8)
-#         curr_unit = 'USD'
-#     elif curr == 2:
-#         c = CurrencyRates()
-#         rate = float(c.get_rate('EUR', 'USD'))
-#         price = round(price * rate * 1.01, sigfigs=8)
-#         curr_unit = 'EUR'
-#     elif curr == 3:
-#         c = CurrencyRates()
-#         rate = float(c.get_rate('GBP', 'USD'))
-#         price = round(price * rate * 1.01, sigfigs=8)
-#         curr_unit = 'GBP'
-#
-# st.text('\n\n')
-# st.markdown("""---""")
-#
-# st.write(f'Stronger liquid represents {round(quantity/percent_total_volume * 100, sigfigs = 4)}% of total volume \n')
-# st.write(f'Weaker liquid {round(((percent_total_volume - weaker_total_volume)/percent_total_volume * 100), sigfigs = 4)}% of total volume\n')
-# st.write(f'You will need to add {round(weaker_total_volume, sigfigs=4)} liters of water to the {quantity} liters of brew.\n')
-# st.write(f'Total volume is {percent_total_volume} liters| {round(total_oz, sigfigs=4)} fluid ounces\n')
-# st.write(f'The batch will produce a total of {round(cases, sigfigs=6)} cases\n')
-# if curr != 1:
-#     st.write(
-#         f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
-#         ' an assumed transaction fee of 1%.')
-# else:
-#     st.write(f'The total cost for this order is ${price}')
-#
-#
-#
-# if curr != 1:
-#     st.write(
-#         f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
-#         ' an assumed transaction fee of 1%.')
-# else:
-#     st.write(f'The total cost for this order is ${price}')
+if unit_type == 1:
+    if vol_type == 1:
+        price = unit_price * num
+        quantity = num * 117.348
+    elif vol_type == 2:
+        price = unit_price * (num / 117.348)
+        quantity = num
+
+elif unit_type == 2:
+    if vol_type == 1:
+        price = unit_price * 117.348 * num
+        quantity = num * 117.348
+    elif vol_type == 2:
+        price = unit_price * num
+else:
+    pass
+
+stronger_abv = .19
+weaker_abv = 0
+required_abv_abv = .05
+quantity = 117.348
+
+if unit == 1:
+    quantity = quantity * 117.348
+elif unit == 2:
+    quantity = quantity * 3.78541
+else:
+    pass
+
+if unit == 1:
+    unit = 'Beer Barrels'
+elif unit == 2:
+    unit = 'Gallons'
+else:
+    unit = 'Liters'
+
+
+stronger_abv = st.number_input('Enter brew ABV')
+
+weaker_abv = 0
+
+required_abv_abv = st.number_input('Enter target ABV')
+
+
+weaker_req = stronger_abv - required_abv_abv
+stronger_req = required_abv_abv - weaker_abv
+
+required_stronger = round((stronger_req / (stronger_req + weaker_req)), sigfigs=4)
+required_weaker = round((weaker_req / (stronger_req + weaker_req)), sigfigs=4)
+percent_total_volume = round(quantity / required_stronger, sigfigs=3)
+weaker_total_volume = percent_total_volume * required_weaker
+total_oz = percent_total_volume * 33.814
+cases = total_oz / 240
+
+if curr == 1:
+    # price = round(unit_price * num, sigfigs = 8)
+    curr_unit = 'USD'
+elif curr == 2:
+    c = CurrencyRates()
+    rate = float(c.get_rate('EUR', 'USD'))
+    price = round(price * rate * 1.01, sigfigs=8)
+    curr_unit = 'EUR'
+elif curr == 3:
+    c = CurrencyRates()
+    rate = float(c.get_rate('GBP', 'USD'))
+    price = round(price * rate * 1.01, sigfigs=8)
+    curr_unit = 'GBP'
+
+st.text('\n\n')
+st.markdown("""---""")
+
+
+st.write(f'You will need to add {round(weaker_total_volume, sigfigs=4)} liters of water to the {quantity} liters of brew.\n')
+st.write(f'Total volume is {percent_total_volume} liters| {round(total_oz, sigfigs=4)} fluid ounces\n')
+st.write(f'The batch will produce a total of {round(cases, sigfigs=6)} cases\n')
+if curr != 1:
+    st.write(
+        f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
+        ' an assumed transaction fee of 1%.')
+else:
+    st.write(f'The total cost for this order is ${price}')
+
+
+
+if curr != 1:
+    st.write(
+        f'The total cost for this order is ${price} at the current {curr_unit}/USD exchange rate of {rate} including'
+        ' an assumed transaction fee of 1%.')
+else:
+    st.write(f'The total cost for this order is ${price}')
 
