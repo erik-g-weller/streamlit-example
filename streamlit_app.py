@@ -81,10 +81,9 @@ elif unit_type == 2:
 else:
     pass
 
-stronger_abv = .19
+
 weaker_abv = 0
-required_abv_abv = .05
-quantity = 117.348
+
 
 # if vol_type == 'Barrels':
 #     quantity = quantity * 117.348
@@ -101,11 +100,11 @@ quantity = 117.348
 #     unit = 'Liters'
 
 
-stronger_abv = st.number_input('Enter brew ABV')
+stronger_abv = float(st.text_input('Enter brew ABV'))
 
 weaker_abv = 0
 
-required_abv_abv = st.number_input('Enter target ABV')
+required_abv_abv = float(st.text_input('Enter target ABV'))
 
 
 weaker_req = stronger_abv - required_abv_abv
