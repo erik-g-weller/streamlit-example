@@ -124,12 +124,12 @@ if curr == 'USD':
 elif curr == 'EUR':
     c = CurrencyRates()
     rate = float(c.get_rate('EUR', 'USD'))
-    price = round(price * rate * num * 1.01, sigfigs=8)
+    price = round(unit_price * rate * num * 1.01, sigfigs=8)
     curr_unit = 'EUR'
 elif curr == 'GBP':
     c = CurrencyRates()
     rate = float(c.get_rate('GBP', 'USD'))
-    price = round(price * rate * 1.01, sigfigs=8)
+    price = round(unit_price * rate * 1.01, sigfigs=8)
     curr_unit = 'GBP'
 
 st.text('\n\n')
