@@ -89,7 +89,7 @@ try:
     else:
         pass
 except:
-    print('')
+    print('Enter above parameters to continue')
 
 
 weaker_abv = 0
