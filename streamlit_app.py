@@ -136,6 +136,7 @@ with st.form("my_form"):
         total_oz = percent_total_volume * 33.814
         cases = total_oz / 240
 
+    submitted = st.form_submit_button("Submit")
 
     if curr == 'USD':
         price = round(price, sigfigs = 8)
@@ -151,7 +152,8 @@ with st.form("my_form"):
         price = round(price * rate * 1.01, sigfigs=8)
         curr_unit = 'GBP'
 
-    submitted = st.form_submit_button("Submit")
+
+
     if submitted:
         st.text('\n\n')
         st.markdown("""---""")
