@@ -155,6 +155,7 @@ with st.form("my_form"):
     if submitted:
         st.text('\n\n')
         st.markdown("""---""")
+        st.markdown("""---""")
 
         st.write(quantity)
         st.write(unit_price)
