@@ -123,7 +123,6 @@ try:
 except ValueError:
     print('Enter target ABV')
 
-
 try:
 
     weaker_req = stronger_abv - required_abv_abv
@@ -135,22 +134,23 @@ try:
     weaker_total_volume = percent_total_volume * required_weaker
     total_oz = percent_total_volume * 33.814
     cases = total_oz / 240
-
-    if curr == 'USD':
-        price = round(price, sigfigs = 8)
-        curr_unit = 'USD'
-    elif curr == 'EUR':
-        c = CurrencyRates()
-        rate = float(c.get_rate('EUR', 'USD'))
-        price = round(price * rate * 1.01, sigfigs=8)
-        curr_unit = 'EUR'
-    elif curr == 'GBP':
-        c = CurrencyRates()
-        rate = float(c.get_rate('GBP', 'USD'))
-        price = round(price * rate * 1.01, sigfigs=8)
-        curr_unit = 'GBP'
 except ValueError:
-    print('')
+    print('Enter values')
+
+if curr == 'USD':
+    price = round(price, sigfigs = 8)
+    curr_unit = 'USD'
+elif curr == 'EUR':
+    c = CurrencyRates()
+    rate = float(c.get_rate('EUR', 'USD'))
+    price = round(price * rate * 1.01, sigfigs=8)
+    curr_unit = 'EUR'
+elif curr == 'GBP':
+    c = CurrencyRates()
+    rate = float(c.get_rate('GBP', 'USD'))
+    price = round(price * rate * 1.01, sigfigs=8)
+    curr_unit = 'GBP'
+
 st.text('\n\n')
 st.markdown("""---""")
 
