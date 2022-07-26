@@ -13,7 +13,7 @@ from sigfig import round
 """
 # SUNiCE Brew Converter
 """
-form = st.form("my_form"):
+form = st.form("my_form")
 
 curr = st.selectbox('Choose Currency:', ['USD', 'EUR','GBP'])
 st.text('\n\n')
